@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>c329b718-827e-43eb-9a9c-557779a51220</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>NeilvynSampleBlueprint.Mobile.App.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)AutofacBootstrapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Modules\ServicesModule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Modules\PageModule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Modules\PlatformModule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Modules\PersistanceModule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Modules\XamarinServicesModule.cs" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:NeilvynSampleBlueprint.Mobile.Xamarin.UI.Resources;assembly=NeilvynSampleBlueprint.Mobile.Xamarin.UI"
+             x:Class="NeilvynSampleBlueprint.Mobile.Xamarin.UI.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <resources:Styles/>
+                <resources:Sizes/>
+                <resources:Colors/>
+                <resources:Converters/>
+                <resources:ControlTemplates />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

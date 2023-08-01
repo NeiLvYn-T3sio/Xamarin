@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NeilvynSampleBlueprint.Mobile.Xamarin.UI.CustomControls.InputWrapper"
+             xmlns:shapes="clr-namespace:Xamarin.Forms.Shapes;assembly=Xamarin.Forms.Core"
+             xmlns:resources="clr-namespace:NeilvynSampleBlueprint.Mobile.Xamarin.UI.Resources;assembly=NeilvynSampleBlueprint.Mobile.Xamarin.UI"
+             xmlns:validations="clr-namespace:NeilvynSampleBlueprint.Mobile.Xamarin.Domain.Validations;assembly=NeilvynSampleBlueprint.Mobile.Xamarin.Domain"
+             x:Name="Root"
+             Margin="0"
+             Padding="0"
+             BackgroundColor="Transparent">
+    
+    <ContentView.Content>
+        <Grid x:Name="MainGrid"
+              RowDefinitions="Auto, *, Auto"
+              RowSpacing="5">
+            <Label x:Name="ControlTitle"
+                   FontSize="{StaticResource DefaultEntryTitleFontSize}"
+                   Text="{Binding Source={x:Reference Root}, Path=Title}"
+                   TextColor="{Binding Source={x:Reference Root}, Path=BorderColor}"
+                   IsVisible="True"
+                   FontFamily="{x:Static resources:Fonts.BoldFont}">
+                <Label.Padding>
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="Android"
+                            Value="5" />
+                        <On Platform="iOS"
+                            Value="0,5" />
+                    </OnPlatform>
+                </Label.Padding>
+                <Label.Triggers>
+                    <DataTrigger TargetType="Label"
+                                 Binding="{Binding Source={x:Reference Root}, Path=Title}"
+                                 Value="{x:Static x:String.Empty}">
+                        <Setter Property="IsVisible"
+                                Value="False" />
+                    </DataTrigger>
+                </Label.Triggers>
+            </Label>
+            <Grid x:Name="InputGrid"
+                  Grid.Row="1"
+                  Margin="0"
+                  Padding="10,0"
+                  ColumnDefinitions="*,Auto"
+                  ColumnSpacing="0"
+                  HorizontalOptions="FillAndExpand"
+                  HeightRequest="{Binding Source={x:Reference Root}, Path=InputHeight}">
+                
+                <shapes:Rectangle x:Name="BorderRectangle"
+                                  Grid.ColumnSpan="2"
+                                  Margin="-10,0"
+                                  Style="{StaticResource BorderRoundedRectangleStyle}"/>
+
+                <Label x:Name="PlaceholderLabel"
+                       Grid.Column="0"
+                       Text="{Binding Source={x:Reference Root}, Path=Placeholder}"
+                       TextColor="{Binding Source={x:Reference Root}, Path=PlaceHolderTextColor}"
+                       Style="{StaticResource PlaceholderLabelStyle}"
+                       IsVisible="False">
+                </Label>
+
+                <Label x:Name="ReadOnlyLabel"
+                       Grid.Column="0"
+                       Text="{Binding Source={x:Reference Root}, Path=InputValue}"
+                       FontFamily="LatoBoldFontFamily"
+                       TextColor="{Binding Source={x:Reference Root}, Path=PlaceHolderTextColor}"
+                       Style="{StaticResource PlaceholderLabelStyle}"
+                       IsVisible="{Binding Source={x:Reference Root}, Path=IsReadOnly}">
+                </Label>
+
+                <ContentView x:Name="InputHolder"
+                             Grid.Column="0"
+                             VerticalOptions="Fill"
+                             IsVisible="{Binding Source={x:Reference Root}, Path=IsReadOnly, Converter={StaticResource BooleanNegateConverter}}">
+                    <ContentView.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"/>
+                    </ContentView.GestureRecognizers>
+                </ContentView>
+
+                <Label x:Name="AdornmentIconLabel"
+                       Grid.Column="1"
+                       FontFamily="FontAwesomeSolidFontFamily"
+                       FontSize="{StaticResource IconFontSize}"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       IsEnabled="{Binding Source={x:Reference Root}, Path=IsReadOnly, Converter={StaticResource BooleanNegateConverter}}"
+                       Text="{Binding Source={x:Reference Root}, Path=AdornmentIcon}"/>
+            </Grid>
+
+
+            <Label x:Name="ErrorMessageLabel"
+                   Grid.Row="2"
+                   FontFamily="LatoRegularFontFamily"
+                   FontSize="{StaticResource DefaultEntryFooterFontSize}"
+                   Text="{Binding Source={x:Reference Root}, Path=ErrorMessage}"
+                   TextColor="{Binding Source={x:Reference Root}, Path=ErrorColor}"
+                   IsVisible="False">
+                <Label.Padding>
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="Android"
+                            Value="5" />
+                        <On Platform="iOS"
+                            Value="0,5" />
+                    </OnPlatform>
+                </Label.Padding>
+                <Label.Triggers>
+                    <MultiTrigger TargetType="Label">
+                        <MultiTrigger.Conditions>
+                            <BindingCondition Binding="{Binding Source={x:Reference Root}, Path=ValidationState}"
+                                 Value="{x:Static validations:ValidationState.Invalid}"/>
+                            <BindingCondition Binding="{Binding Source={x:Reference Root}, Path=ShowValidationError}"
+                                 Value="True"/>
+                        </MultiTrigger.Conditions>
+                        <Setter Property="IsVisible"
+                                Value="True" />
+                    </MultiTrigger>
+                </Label.Triggers>
+            </Label>
+
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="InputStates">
+                    <VisualState x:Name="Focused">
+                        <VisualState.Setters>
+                            <Setter TargetName="ControlTitle"
+                                    Property="Label.TextColor"
+                                    Value="{Binding FocusColor, Source={x:Reference Root}}" />
+                            <Setter TargetName="AdornmentIconLabel"
+                                    Property="Label.TextColor"
+                                    Value="{Binding FocusColor, Source={x:Reference Root}}" />
+                            <Setter TargetName="BorderRectangle"
+                                    Property="shapes:Rectangle.Stroke">
+                                <SolidColorBrush Color="{Binding FocusColor, Source={x:Reference Root}}" />
+                            </Setter>
+                            <Setter TargetName="BorderRectangle"
+                                    Property="shapes:Rectangle.StrokeThickness"
+                                    Value="2"/>
+                            <Setter TargetName="BorderRectangle"
+                                    Property="shapes:Rectangle.Fill">
+                                <SolidColorBrush Color="{Binding FocusBackgroundColor, Source={x:Reference Root}}" />
+                            </Setter>
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Filled">
+                        <VisualState.Setters>
+                            <!--<Setter TargetName="ControlTitle"
+                                    Property="Label.TextColor"
+                                    Value="{Binding TextColor, Source={x:Reference Root}}" />-->
+                            <Setter TargetName="AdornmentIconLabel"
+                                    Property="Label.TextColor"
+                                    Value="{Binding TextColor, Source={x:Reference Root}}" />
+                            <Setter TargetName="BorderRectangle"
+                                    Property="shapes:Rectangle.Stroke">
+                                <SolidColorBrush Color="{Binding FocusColor, Source={x:Reference Root}}" />
+                            </Setter>
+                            <Setter TargetName="BorderRectangle"
+                                    Property="shapes:Rectangle.StrokeThickness"
+                                    Value="1"/>
+                            <Setter TargetName="BorderRectangle"
+                                    Property="shapes:Rectangle.Fill">
+                                <SolidColorBrush Color="{Binding FocusBackgroundColor, Source={x:Reference Root}}" />
+                            </Setter>
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Error">
+                        <VisualState.Setters>
+                            <Setter TargetName="ControlTitle"
+                                    Property="Label.TextColor"
+                                    Value="{Binding ErrorColor, Source={x:Reference Root}}" />
+                            <Setter TargetName="AdornmentIconLabel"
+                                    Property="Label.TextColor"
+                                    Value="{Binding ErrorColor, Source={x:Reference Root}}" />
+                            <Setter TargetName="BorderRectangle"
+                                    Property="shapes:Rectangle.Stroke">
+                                <SolidColorBrush Color="{Binding ErrorColor, Source={x:Reference Root}}" />
+                            </Setter>
+                            <Setter TargetName="BorderRectangle"
+                                    Property="shapes:Rectangle.StrokeThickness"
+                                    Value="2"/>
+                            <Setter TargetName="BorderRectangle"
+                                    Property="shapes:Rectangle.Fill">
+                                <SolidColorBrush Color="{Binding FocusBackgroundColor, Source={x:Reference Root}}" />
+                            </Setter>
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="ReadOnly">
+                        <VisualState.Setters>
+                            <Setter TargetName="ControlTitle"
+                                    Property="Label.TextColor"
+                                    Value="{Binding BorderColor, Source={x:Reference Root}}" />
+                            <Setter TargetName="AdornmentIconLabel"
+                                    Property="Label.TextColor"
+                                    Value="{Binding PlaceHolderTextColor, Source={x:Reference Root}}" />
+                            <Setter TargetName="BorderRectangle"
+                                    Property="shapes:Rectangle.Stroke">
+                                <SolidColorBrush Color="{Binding PlaceHolderTextColor, Source={x:Reference Root}}" />
+                            </Setter>
+                            <Setter TargetName="BorderRectangle"
+                                    Property="shapes:Rectangle.StrokeThickness"
+                                    Value="1"/>
+                            <Setter TargetName="BorderRectangle"
+                                    Property="shapes:Rectangle.Fill">
+                                <SolidColorBrush Color="{StaticResource WhiteColor}" />
+                            </Setter>
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Empty">
+                        <VisualState.Setters>
+                            <Setter TargetName="ControlTitle"
+                                    Property="Label.TextColor"
+                                    Value="{Binding BorderColor, Source={x:Reference Root}}" />
+                            <Setter TargetName="AdornmentIconLabel"
+                                    Property="Label.TextColor"
+                                    Value="{Binding TextColor, Source={x:Reference Root}}" />
+                            <Setter TargetName="BorderRectangle"
+                                    Property="shapes:Rectangle.Stroke">
+                                <SolidColorBrush Color="{Binding BorderColor, Source={x:Reference Root}}" />
+                            </Setter>
+                            <Setter TargetName="BorderRectangle"
+                                    Property="shapes:Rectangle.StrokeThickness"
+                                    Value="1"/>
+                            <Setter TargetName="BorderRectangle"
+                                    Property="shapes:Rectangle.Fill">
+                                <SolidColorBrush Color="{Binding FocusBackgroundColor, Source={x:Reference Root}}" />
+                            </Setter>
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

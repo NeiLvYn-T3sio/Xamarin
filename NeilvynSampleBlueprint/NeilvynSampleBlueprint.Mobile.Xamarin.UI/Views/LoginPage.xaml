@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<views:LoginPageXaml xmlns="http://xamarin.com/schemas/2014/forms"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                     xmlns:views="clr-namespace:NeilvynSampleBlueprint.Mobile.Xamarin.UI.Views;assembly=NeilvynSampleBlueprint.Mobile.Xamarin.UI"
+                     xmlns:customControls="clr-namespace:NeilvynSampleBlueprint.Mobile.Xamarin.UI.CustomControls;assembly=NeilvynSampleBlueprint.Mobile.Xamarin.UI"
+                     xmlns:res="clr-namespace:NeilvynSampleBlueprint.Mobile.Xamarin.UI.Resources;assembly=NeilvynSampleBlueprint.Mobile.Xamarin.UI"
+                     xmlns:viewModels="clr-namespace:NeilvynSampleBlueprint.Mobile.Xamarin.Common.ViewModels;assembly=NeilvynSampleBlueprint.Mobile.Xamarin.Common"                     
+                     xmlns:loc="clr-namespace:NeilvynSampleBlueprint.Mobile.Common.Localization;assembly=NeilvynSampleBlueprint.Mobile.Common"                     
+                     x:Class="NeilvynSampleBlueprint.Mobile.Xamarin.UI.Views.LoginPage"
+                     x:DataType="viewModels:LoginViewModel"
+                     Title="Login">
+    <Grid Padding="20" BackgroundColor="{StaticResource PrimaryPageBackgroundColor}"
+          RowDefinitions="*,Auto">
+        <StackLayout Grid.Row="0" 
+                     Spacing="0"
+                     WidthRequest="400"
+                     VerticalOptions="Center">
+
+            <customControls:InputWrapper Title="{x:Static loc:AppResources.Label_Email}"
+                                         Placeholder="{x:Static loc:AppResources.Placeholder_Email}"
+                                         Adornment="End"
+                                         AdornmentIcon="{x:Static res:FontAwesomeIcons.Email}"
+                                         ErrorMessage="{Binding EmailValidatableObject.FirstError}"
+                                         ValidationState="{Binding EmailValidatableObject.ValidationState}"
+                                         Style="{StaticResource AuthInputStyle}">
+                <Entry Text="{Binding EmailValidatableObject.Value}"
+                       Keyboard="Email" />
+            </customControls:InputWrapper>
+
+            <customControls:InputWrapper Title="{x:Static loc:AppResources.Label_Password}"
+                                         Placeholder="{x:Static loc:AppResources.Placeholder_Password}"
+                                         Adornment="End"
+                                         AdornmentIcon="{Binding IsPasswordMasked, Converter={StaticResource BoolToMaskIconConverter}}"
+                                         AdornmentCommand="{Binding TogglePasswordMaskingCommand}"
+                                         ErrorMessage="{Binding PasswordValidatableObject.FirstError}"
+                                         ValidationState="{Binding PasswordValidatableObject.ValidationState}"
+                                         Style="{StaticResource AuthInputStyle}">
+                <Entry Text="{Binding PasswordValidatableObject.Value}"
+                       IsPassword="{Binding IsPasswordMasked}" />
+            </customControls:InputWrapper>
+        </StackLayout>
+
+        <StackLayout Grid.Row="1" 
+                     WidthRequest="400"
+                     HorizontalOptions="Center">
+            <customControls:ActionButton Command="{Binding LoginCommand}"
+                                         Text="{x:Static loc:AppResources.Label_Login}"
+                                         TextTransform="Uppercase" />
+        </StackLayout>
+    </Grid>
+</views:LoginPageXaml>

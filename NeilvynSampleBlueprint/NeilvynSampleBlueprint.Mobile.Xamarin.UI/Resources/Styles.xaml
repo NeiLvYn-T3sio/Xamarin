@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:shapes="clr-namespace:Xamarin.Forms.Shapes;assembly=Xamarin.Forms.Core"
+                    xmlns:resources="clr-namespace:NeilvynSampleBlueprint.Mobile.Xamarin.UI.Resources;assembly=NeilvynSampleBlueprint.Mobile.Xamarin.UI"
+                    xmlns:customControls="clr-namespace:NeilvynSampleBlueprint.Mobile.Xamarin.UI.CustomControls;assembly=NeilvynSampleBlueprint.Mobile.Xamarin.UI"
+                    x:Class="NeilvynSampleBlueprint.Mobile.Xamarin.UI.Resources.Styles">
+
+    <ResourceDictionary.MergedDictionaries>
+        <resources:Sizes/>
+        <resources:Colors/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="Label">
+        <Setter Property="FontFamily" Value="LatoRegularFontFamily"/>
+        <Setter Property="FontSize" Value="{StaticResource DefaultLabelFontSize}" />
+        <Setter Property="LineHeight" Value="1.2" />
+        <Setter Property="TextColor" Value="{StaticResource GrayColor3}"/>
+
+    </Style>
+
+    <Style TargetType="Label" x:Key="LargeLabelStyle">
+        <Setter Property="FontFamily" Value="LatoRegularFontFamily"/>
+        <Setter Property="FontSize" Value="{StaticResource SubHeaderFontSize}" />
+        <Setter Property="LineHeight" Value="1.2" />
+        <Setter Property="TextColor" Value="{StaticResource GrayColor3}"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="InputLabelStyle">
+        <Setter Property="FontSize" Value="{DynamicResource DefaultEntryFontSize}" />
+        <Setter Property="HeightRequest" Value="{DynamicResource DefaultEntryHeight}" />
+        <Setter Property="FontFamily" Value="LatoRegularFontFamily" />
+        <Setter Property="LineBreakMode" Value="TailTruncation"/>
+        <Setter Property="MaxLines" Value="1"/>
+    </Style>
+
+    <Style TargetType="Entry">
+        <Setter Property="FontSize" Value="{DynamicResource DefaultEntryFontSize}" />
+        <Setter Property="HeightRequest" Value="{DynamicResource DefaultEntryHeight}" />
+        <Setter Property="FontFamily" Value="LatoRegularFontFamily" />
+    </Style>
+
+    <Style TargetType="Picker">
+        <Setter Property="FontSize" Value="{DynamicResource DefaultEntryFontSize}" />
+        <Setter Property="HeightRequest" Value="{DynamicResource DefaultEntryHeight}" />
+        <Setter Property="FontFamily" Value="LatoRegularFontFamily" />
+    </Style>
+
+    <Style TargetType="DatePicker" ApplyToDerivedTypes="True">
+        <Setter Property="FontSize" Value="{DynamicResource DefaultEntryFontSize}" />
+        <Setter Property="HeightRequest" Value="{DynamicResource DefaultEntryHeight}" />
+        <Setter Property="FontFamily" Value="LatoRegularFontFamily" />
+    </Style>
+    
+    <Style TargetType="TimePicker" ApplyToDerivedTypes="True">
+        <Setter Property="FontSize" Value="{DynamicResource DefaultEntryFontSize}" />
+        <Setter Property="HeightRequest" Value="{DynamicResource DefaultEntryHeight}" />
+        <Setter Property="FontFamily" Value="LatoRegularFontFamily" />
+    </Style>
+
+    <Style TargetType="Grid">
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="RowSpacing" Value="0" />
+        <Setter Property="ColumnSpacing" Value="0" />
+    </Style>
+
+    <Style TargetType="StackLayout">
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Spacing" Value="0" />
+    </Style>
+
+    <Style TargetType="customControls:ActionButton">
+        <Setter Property="FontFamily" Value="LatoRegularFontFamily"/>
+        <Setter Property="FontSize" Value="{StaticResource DefaultLabelFontSize}" />
+    </Style>
+
+    <Style TargetType="ProgressBar">
+        <Setter Property="ProgressColor" Value="{DynamicResource CoolBlueColor1}" />
+        <Setter Property="HeightRequest" Value="10" />
+    </Style>
+
+    <Style x:Key="BorderRoundedRectangleStyle"
+           TargetType="shapes:Rectangle"
+           BaseResourceKey="RoundedRectangleStyle">
+        <Setter Property="StrokeThickness" Value="2"/>
+        <Setter Property="RadiusX" Value="5" />
+        <Setter Property="RadiusY" Value="5" />
+    </Style>
+    
+    <Style x:Key="RoundedRectangleStyle"
+           TargetType="shapes:Rectangle">
+        <Setter Property="Margin">
+            <OnPlatform x:TypeArguments="Thickness">
+                <On Platform="Android" Value="-2,-1"/>
+                <On Platform="iOS" Value="0"/>
+            </OnPlatform>
+        </Setter>
+        <Setter Property="StrokeThickness" Value="0" />
+        <Setter Property="RadiusX" Value="5" />
+        <Setter Property="RadiusY" Value="5" />
+        <Setter Property="StrokeLineJoin" Value="Round" />
+        <Setter Property="HorizontalOptions" Value="Fill" />
+        <Setter Property="VerticalOptions" Value="Fill" />
+    </Style>
+
+    <!--Entries-->
+    <Style TargetType="Label" x:Key="PlaceholderLabelStyle">
+        <Setter Property="FontSize" Value="{DynamicResource DefaultEntryFontSize}" />
+        <Setter Property="FontFamily" Value="LatoRegularFontFamily" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="Fill" />
+        <Setter Property="MaxLines" Value="1"/>
+        <Setter Property="LineBreakMode" Value="TailTruncation" />
+    </Style>
+
+
+    <Style x:Key="IconLabelStyle"
+           TargetType="Label">
+        <Setter Property="FontFamily" Value="FontAwesomeSolidFontFamily" />
+        <Setter Property="TextColor" Value="{StaticResource GrayColor1}" />
+        <Setter Property="FontSize">
+            <Setter.Value>
+                <OnPlatform x:TypeArguments="x:Double">
+                    <On Platform="Android">20</On>
+                    <On Platform="iOS">24</On>
+                </OnPlatform>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="FontelloIconLabelStyle"
+           TargetType="Label">
+        <Setter Property="FontFamily" Value="FontelloFontFamily" />
+        <Setter Property="TextColor" Value="{StaticResource GrayColor1}" />
+        <Setter Property="FontSize">
+            <Setter.Value>
+                <OnPlatform x:TypeArguments="x:Double">
+                    <On Platform="Android">20</On>
+                    <On Platform="iOS">24</On>
+                </OnPlatform>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="HeaderLabelStyle"
+	       TargetType="Label">
+        <Setter Property="FontFamily" Value="LatoBoldFontFamily" />
+        <Setter Property="TextColor" Value="{StaticResource GrayColor1}" />
+        <Setter Property="FontSize" Value="{StaticResource HeaderLabelFontSize}" />
+        <Setter Property="LineHeight" Value="1.2" />
+
+    </Style>
+    
+    <Style x:Key="SubheaderLabelStyle"
+	       TargetType="Label"
+	       BasedOn="{StaticResource HeaderLabelStyle}">
+        <Setter Property="FontSize" Value="{StaticResource GroupLabelFontSize}"/>
+        <Setter Property="HeightRequest" Value="30"/>
+    </Style>
+    
+    <Style x:Key="MediumLabelStyle"
+           TargetType="Label"
+           BasedOn="{StaticResource SubheaderLabelStyle}">
+        <Setter Property="FontSize" Value="{StaticResource MediumFontSize}"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+    </Style>
+    
+    <Style x:Key="DialogLabelMessageStyle"
+           TargetType="Label">
+        <Setter Property="FontFamily" Value="LatoBoldFontFamily" />
+        <Setter Property="TextColor" Value="{StaticResource GrayColor1}" />
+        <Setter Property="FontSize" Value="{StaticResource MediumFontSize}"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+    </Style>
+    
+    <Style x:Key="AuthInputStyle"
+           TargetType="customControls:InputWrapper">
+        <Setter Property="TextColor" Value="{StaticResource GrayColor1}" />
+        <Setter Property="BorderColor" Value="{StaticResource BorderColor}" />
+        <Setter Property="FocusBackgroundColor" Value="{StaticResource WhiteColor}" />
+        <Setter Property="FocusColor" Value="{StaticResource FocusColor}" />
+        <Setter Property="ErrorColor" Value="{StaticResource ErrorColor}" />
+        <Setter Property="Adornment" Value="None" />
+    </Style>
+
+    
+    <Style x:Key="StandardInputStyle"
+           TargetType="customControls:InputWrapper">
+        <Setter Property="TextColor" Value="{StaticResource GrayColor1}" />
+        <Setter Property="BorderColor" Value="{StaticResource GrayColor3}" />
+        <Setter Property="FocusBackgroundColor" Value="{StaticResource WhiteColor}" />
+        <Setter Property="FocusColor" Value="{StaticResource FocusColor}" />
+        <Setter Property="ErrorColor" Value="{StaticResource ErrorColor}" />
+        <Setter Property="Adornment" Value="None" />
+    </Style>
+    
+    <Style x:Key="StandardPickerStyle"
+           TargetType="customControls:InputWrapper"
+           BasedOn="{StaticResource StandardInputStyle}">
+        <Setter Property="Adornment" Value="End" />
+        <Setter Property="AdornmentIcon" Value="{x:Static resources:FontAwesomeIcons.ChevronDown}" />
+    </Style>
+
+    <Style x:Key="PageHeaderLabelStyle"
+           TargetType="Label">
+        <Setter Property="FontFamily" Value="LatoBoldFontFamily" />
+        <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+        <Setter Property="FontSize" Value="{StaticResource PageHeaderLabelFontSize}" />
+        <Setter Property="LineHeight" Value="1.2" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <Style x:Key="PageFooterLabelStyle"
+           TargetType="Label">
+        <Setter Property="FontFamily" Value="LatoBoldFontFamily" />
+        <Setter Property="TextColor" Value="{StaticResource GrayColor2}" />
+        <Setter Property="FontSize" Value="{StaticResource DefaultLabelFontSize}" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+    </Style>
+    <Style x:Key="PageScrollViewStyle"
+           TargetType="ScrollView">
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="Padding" Value="30"/>
+    </Style>
+    <Style x:Key="PageStackLayoutStyle"
+           TargetType="StackLayout">
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Spacing" Value="10"/>
+
+    </Style>
+    
+    <Style x:Key="NonScrollPageGridStyle"
+           TargetType="Grid">
+        <Setter Property="Padding" Value="30"/>
+        <Setter Property="BackgroundColor" Value="White"/>
+    </Style>
+    
+    <Style x:Key="NonScrollPageStackLayoutStyle"
+           TargetType="StackLayout">
+        <Setter Property="Padding" Value="30"/>
+        <Setter Property="Spacing" Value="10"/>
+        <Setter Property="BackgroundColor" Value="White"/>
+    </Style>
+</ResourceDictionary>

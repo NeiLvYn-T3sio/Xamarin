@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:MainPageXaml xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:NeilvynSampleBlueprint.Mobile.Xamarin.UI.Views;assembly=NeilvynSampleBlueprint.Mobile.Xamarin.UI"
+             xmlns:customControls="clr-namespace:NeilvynSampleBlueprint.Mobile.Xamarin.UI.CustomControls;assembly=NeilvynSampleBlueprint.Mobile.Xamarin.UI"
+             xmlns:viewModels="clr-namespace:NeilvynSampleBlueprint.Mobile.Xamarin.Common.ViewModels;assembly=NeilvynSampleBlueprint.Mobile.Xamarin.Common"
+             x:Class="NeilvynSampleBlueprint.Mobile.Xamarin.UI.Views.MainPage"
+             x:DataType="viewModels:MainViewModel"
+             Title="NeilvynSampleBlueprint Mobile App">
+    <StackLayout VerticalOptions="Start">
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Welcome to &#x0a; NeilvynSampleBlueprint Mobile App!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
+        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
+        <Label FontSize="16" Padding="30,24,30,0">
+            <Label.FormattedText>
+                <FormattedString>
+                    <FormattedString.Spans>
+                        <Span Text="Learn more at "/>
+                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
+                    </FormattedString.Spans>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        
+        <ContentView Padding="20">
+            <customControls:ActionButton Text="Show Sample Users List" Command="{Binding GoToUserListCommand}"/>
+        </ContentView>
+
+        <ContentView Padding="20">
+            <customControls:ActionButton Text="Show Sample Login Page" Command="{Binding GoToLoginCommand}"/>
+        </ContentView>
+    </StackLayout>
+</views:MainPageXaml>

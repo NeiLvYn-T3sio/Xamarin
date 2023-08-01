@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:resources="clr-namespace:NeilvynSampleBlueprint.Mobile.Xamarin.UI.Resources;assembly=NeilvynSampleBlueprint.Mobile.Xamarin.UI"
+                    x:Class="NeilvynSampleBlueprint.Mobile.Xamarin.UI.Resources.ControlTemplates">
+
+    <ResourceDictionary.MergedDictionaries>
+        <resources:Colors />
+        <resources:Sizes />
+        <resources:Styles />
+    </ResourceDictionary.MergedDictionaries>
+
+    <ControlTemplate x:Key="MainPageControlTemplate">
+        <Grid RowDefinitions="{OnPlatform Android='1.2*,9*', iOS='1.2*,9*'}">
+            <Grid BackgroundColor="{StaticResource WhiteColor}">
+                <Grid Padding="20,0"
+				      RowDefinitions="*"
+                      RowSpacing="0">
+
+                    <Grid>
+                        <Image Aspect="AspectFit"
+						       HeightRequest="42"
+                               WidthRequest="220"
+                               Margin="-30,0"
+						       HorizontalOptions="StartAndExpand"
+                               VerticalOptions="CenterAndExpand"
+						       Source="logo_blacktext.png"/>
+
+                        <StackLayout HorizontalOptions="EndAndExpand"
+						             Orientation="Horizontal"
+						             Spacing="10"
+                                     VerticalOptions="CenterAndExpand">
+                            <Label Style="{StaticResource FontelloIconLabelStyle}"
+                                   Text="{x:Static resources:FontelloIcons.UserProfile}"
+                                   VerticalTextAlignment="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{TemplateBinding BindingContext.LogoutCommand}" />
+                                </Label.GestureRecognizers>
+                            </Label>
+
+                            <Label Style="{StaticResource IconLabelStyle}"
+							       Text="{x:Static resources:FontAwesomeIcons.ChevronDown}"
+                                   FontSize="{StaticResource DefaultEntryFontSize}"
+							       VerticalTextAlignment="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{TemplateBinding BindingContext.LogoutCommand}" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                    </Grid>
+                </Grid>
+            </Grid>
+
+            <ContentPresenter Grid.Row="1"
+			                  BackgroundColor="Transparent"
+			                  HorizontalOptions="FillAndExpand"
+			                  VerticalOptions="FillAndExpand" />
+        </Grid>
+    </ControlTemplate>
+    
+</ResourceDictionary>

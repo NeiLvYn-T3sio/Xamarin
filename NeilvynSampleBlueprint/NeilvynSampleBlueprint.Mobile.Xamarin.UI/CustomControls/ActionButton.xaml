@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Button xmlns="http://xamarin.com/schemas/2014/forms" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        x:Class="NeilvynSampleBlueprint.Mobile.Xamarin.UI.CustomControls.ActionButton"
+        TextTransform="Uppercase"
+        VerticalOptions="EndAndExpand"
+        TextColor="{StaticResource WhiteColor}"
+        CornerRadius="10"
+        HeightRequest="50"
+        WidthRequest="325"
+        Background="{StaticResource CardBlueBottomColor}">
+
+    <Button.Triggers>
+        <Trigger TargetType="Button"
+                 Property="IsEnabled"
+                 Value="False">
+            <Setter Property="Opacity" Value="0.75"/>
+        </Trigger>
+    </Button.Triggers>
+</Button>

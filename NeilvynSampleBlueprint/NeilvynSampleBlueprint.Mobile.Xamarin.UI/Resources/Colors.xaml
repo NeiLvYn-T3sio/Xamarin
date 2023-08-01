@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NeilvynSampleBlueprint.Mobile.Xamarin.UI.Resources.Colors">
+
+    <!--Cool Palette-->
+    <Color x:Key="CoolBlueColor1">#017FC4</Color>
+    
+    <!--White Color Palette-->
+    <Color x:Key="WhiteColor">#FFFFFF</Color>
+    <Color x:Key="WhiteColor80">#80FFFFFF</Color>
+
+    <!--Gray Color Palette-->
+    <Color x:Key="GrayColor1">#333333</Color>
+    <Color x:Key="GrayColor2">#95000000</Color>
+    <Color x:Key="GrayColor3">#000000</Color>
+    <Color x:Key="GrayColor4">#888888</Color>
+
+
+    <!--Gradient Color-->
+    <Color x:Key="TopGradientColor">#1E5094</Color>
+    <Color x:Key="BottomGradientColor">#0080C5</Color>
+    <Color x:Key="TopGradientDisabledColor">#1E5195</Color>
+    <Color x:Key="BottomGradientDisabledColor">#017FC4</Color>
+
+    <!--Button Color-->
+    <Color x:Key="ButtonDisabledColor">#7D9BC1</Color>
+
+    <!--Warning and Status Color-->
+    <Color x:Key="ErrorColor">#EE3C3C</Color>
+    <Color x:Key="SuccessColor">#61B482</Color>
+
+    <!--Entry Color-->
+    <Color x:Key="BorderColor">#1E5195</Color>
+    <Color x:Key="FocusColor">#0080C5</Color>
+    
+    <!--Background Color-->
+    <Color x:Key="PrimaryPageBackgroundColor">#EEEEEE</Color>
+    <Color x:Key="SecondaryPageBackgroundColor">#F6F6F6</Color>
+    <Color x:Key="TertiaryPageBackgroundColor">#F1F1F6</Color>
+    <Color x:Key="ExpanderViewContentBackgroundColor">#ECECF1</Color>
+
+    <!--User Control Colors-->
+    <Color x:Key="TitleLabelColor">#FFFFFF</Color>
+    <Color x:Key="SubtitleLabelColor">#95FFFFFF</Color>
+    <Color x:Key="CardBlueTopColor">#1E5195</Color>
+    <Color x:Key="CardBlueBottomColor">#017FC4</Color>
+    <Color x:Key="CardYellowTopColor">#F4AD41</Color>
+    <Color x:Key="CardYellowBottomColor">#FFBD3E</Color>
+    <Color x:Key="CardRedTopColor">#C93D49</Color>
+    <Color x:Key="CardRedBottomColor">#EA3747</Color>
+    <Color x:Key="CardGrayTopColor">#606060</Color>
+    <Color x:Key="CardGrayBottomColor">#999999</Color>
+    <Color x:Key="CardGreenTopColor">#3d8d4e</Color>
+    <Color x:Key="CardGreenBottomColor">#4ab062</Color>
+
+    <LinearGradientBrush x:Key="BlueGradientBrush" EndPoint="0,1">
+        <GradientStop Color="{StaticResource CardBlueTopColor}"
+                      Offset="0.1" />
+        <GradientStop Color="{StaticResource CardBlueBottomColor}"
+                      Offset="1.0" />
+    </LinearGradientBrush>
+    
+    <LinearGradientBrush x:Key="BlueHorizontalGradientBrush" EndPoint="1,0">
+        <GradientStop Color="{StaticResource CardBlueTopColor}"
+                      Offset="0.1" />
+        <GradientStop Color="{StaticResource CardBlueBottomColor}"
+                      Offset="1.0" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="BlackHorizontalGradientBrush" EndPoint="1,0">
+        <GradientStop Color="{StaticResource GrayColor3}"
+                      Offset="0.1" />
+        <GradientStop Color="{StaticResource GrayColor1}"
+                      Offset="1.0" />
+    </LinearGradientBrush>
+    
+    <LinearGradientBrush x:Key="YellowHorizontalGradientBrush" EndPoint="1,0">
+        <GradientStop Color="{StaticResource CardYellowTopColor}"
+                      Offset="0.1" />
+        <GradientStop Color="{StaticResource CardYellowBottomColor}"
+                      Offset="1.0" />
+    </LinearGradientBrush>
+    
+    <LinearGradientBrush x:Key="YellowGradientBrush" EndPoint="0,1">
+        <GradientStop Color="{StaticResource CardYellowTopColor}"
+                      Offset="0.1" />
+        <GradientStop Color="{StaticResource CardYellowBottomColor}"
+                      Offset="1.0" />
+    </LinearGradientBrush>
+    
+    <LinearGradientBrush x:Key="RedGradientBrush" EndPoint="0,1">
+        <GradientStop Color="{StaticResource CardRedTopColor}"
+                      Offset="0.1" />
+        <GradientStop Color="{StaticResource CardRedBottomColor}"
+                      Offset="1.0" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="RedHorizontalGradientBrush" EndPoint="1,0">
+        <GradientStop Color="{StaticResource CardRedTopColor}"
+                      Offset="0.1" />
+        <GradientStop Color="{StaticResource CardRedBottomColor}"
+                      Offset="1.0" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="GrayGradientBrush" EndPoint="0,1">
+        <GradientStop Color="{StaticResource CardGrayTopColor}"
+                      Offset="0.1" />
+        <GradientStop Color="{StaticResource CardGrayBottomColor}"
+                      Offset="1.0" />
+    </LinearGradientBrush>
+    
+    <LinearGradientBrush x:Key="GrayHorizontalGradientBrush" EndPoint="1,0">
+        <GradientStop Color="{StaticResource CardGrayTopColor}"
+                      Offset="0.1" />
+        <GradientStop Color="{StaticResource CardGrayBottomColor}"
+                      Offset="1.0" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="GreenGradientBrush" EndPoint="0,1">
+        <GradientStop Color="{StaticResource CardGreenTopColor}"
+                      Offset="0.1" />
+        <GradientStop Color="{StaticResource CardGreenBottomColor}"
+                      Offset="1.0" />
+    </LinearGradientBrush>
+    
+    <LinearGradientBrush x:Key="GreenHorizontalGradientBrush" EndPoint="1,0">
+        <GradientStop Color="{StaticResource CardGreenTopColor}"
+                      Offset="0.1" />
+        <GradientStop Color="{StaticResource CardGreenBottomColor}"
+                      Offset="1.0" />
+    </LinearGradientBrush>
+
+</ResourceDictionary>

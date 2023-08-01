@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2021 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="joborder" unicode="&#xe800;" d="M790 738h-203c-20 56-74 97-137 97-63 0-117-41-137-97h-203c-54 0-97-44-97-98v-680c0-54 43-98 97-98h680c54 0 98 44 98 98v680c0 54-44 98-98 98z m-340 0c27 0 49-22 49-49 0-27-22-49-49-49-27 0-49 22-49 49 0 27 22 49 49 49z m0-195c81 0 146-65 146-146 0-80-65-146-146-146-81 0-146 66-146 146 0 81 65 146 146 146z m292-583h-584v68c0 97 195 151 292 151 97 0 292-54 292-151v-68z" horiz-adv-x="900" />
+
+<glyph glyph-name="joborderdirectory" unicode="&#xe801;" d="M790 738h-203c-20 56-74 97-137 97-63 0-117-41-137-97h-203c-54 0-97-44-97-98v-680c0-54 43-98 97-98h680c54 0 98 44 98 98v680c0 54-44 98-98 98z m-340 0c27 0 49-22 49-49 0-27-22-49-49-49-27 0-49 22-49 49 0 27 22 49 49 49z m97-681h-340v97h340v-97z m146 194h-486v98h486v-98z m0 195h-486v97h486v-97z" horiz-adv-x="900" />
+
+<glyph glyph-name="helpinfo" unicode="&#xe802;" d="M500 820c-260 0-470-210-470-470 0-260 210-470 470-470 260 0 470 210 470 470 0 260-210 470-470 470z m47-705h-94v282h94v-282z m0 376h-94v94h94v-94z" horiz-adv-x="1000" />
+
+<glyph glyph-name="userprofile" unicode="&#xe803;" d="M500 850c-276 0-500-224-500-500 0-276 224-500 500-500 276 0 500 224 500 500 0 276-224 500-500 500z m0-150c83 0 150-67 150-150 0-83-67-150-150-150-83 0-150 67-150 150 0 83 67 150 150 150z m0-710c-125 0-235 64-300 161 2 100 200 154 300 154 100 0 299-54 300-154-64-97-175-161-300-161z" horiz-adv-x="1000" />
+
+<glyph glyph-name="capturedowntime" unicode="&#xe804;" d="M797 481h-225v337h-336v-337h-225l393-392 393 392z m-786-504v-113h786v113h-786z" horiz-adv-x="808" />
+</font>
+</defs>
+</svg>

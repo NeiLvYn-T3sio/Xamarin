@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary x:Class="NeilvynSampleBlueprint.Mobile.Xamarin.UI.Resources.Sizes"
+                    xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    mc:Ignorable="d">
+
+    <x:Double x:Key="TitleFontSize">22</x:Double>
+    <x:Double x:Key="SubHeaderFontSize">18</x:Double>
+
+    <x:Double x:Key="DefaultLabelFontSize">12</x:Double>
+
+    <OnPlatform x:Key="DefaultEntryFontSize"
+	            x:TypeArguments="x:Double">
+        <On Platform="Android">14</On>
+        <On Platform="iOS">14</On>
+        <On Platform="UWP">14</On>
+    </OnPlatform>
+
+    <OnPlatform x:Key="DefaultEntryHeight"
+	            x:TypeArguments="x:Double">
+        <On Platform="Android">42</On>
+        <On Platform="iOS">40</On>
+        <On Platform="UWP">42</On>
+
+    </OnPlatform>
+
+    <OnPlatform x:Key="DefaultEntryTitleFontSize"
+	            x:TypeArguments="x:Double">
+        <On Platform="Android">14</On>
+        <On Platform="iOS">14</On>
+        <On Platform="UWP">14</On>
+
+    </OnPlatform>
+
+    <OnPlatform x:Key="DefaultEntryFooterFontSize"
+	            x:TypeArguments="x:Double">
+        <On Platform="Android">12</On>
+        <On Platform="iOS">14</On>
+        <On Platform="UWP">12</On>
+
+    </OnPlatform>
+
+    <OnPlatform x:Key="DefaultAuthPagePaddingSize"
+	            x:TypeArguments="Thickness">
+        <On Platform="Android">20,52</On>
+        <On Platform="iOS">20,52</On>
+        <On Platform="UWP">20,52</On>
+
+    </OnPlatform>
+
+    <OnPlatform x:Key="IconFontSize"
+	            x:TypeArguments="x:Double">
+        <On Platform="Android">16</On>
+        <On Platform="iOS">18</On>
+        <On Platform="UWP">16</On>
+    </OnPlatform>
+
+    <OnPlatform x:Key="MediumFontSize"
+	            x:TypeArguments="x:Double">
+        <On Platform="Android">16</On>
+        <On Platform="iOS">16</On>
+        <On Platform="UWP">16</On>
+
+    </OnPlatform>
+
+    <OnPlatform x:Key="XSmallFontSize"
+	            x:TypeArguments="x:Double">
+        <On Platform="Android">12</On>
+        <On Platform="iOS">14</On>
+        <On Platform="UWP">12</On>
+
+    </OnPlatform>
+
+    <OnPlatform x:Key="XxSmallFontSize"
+	            x:TypeArguments="x:Double">
+        <On Platform="Android">10</On>
+        <On Platform="iOS">10</On>
+        <On Platform="UWP">10</On>
+
+    </OnPlatform>
+
+    <OnPlatform x:Key="XLargeFontSize"
+	            x:TypeArguments="x:Double">
+        <On Platform="Android">20</On>
+        <On Platform="iOS">22</On>
+        <On Platform="UWP">20</On>
+
+    </OnPlatform>
+
+    <OnPlatform x:Key="GroupLabelFontSize"
+                x:TypeArguments="x:Double">
+        <On Platform="Android">16</On>
+        <On Platform="iOS">18</On>
+        <On Platform="UWP">16</On>
+
+    </OnPlatform>
+
+    <OnPlatform x:Key="HeaderLabelFontSize"
+	            x:TypeArguments="x:Double">
+        <On Platform="Android">24</On>
+        <On Platform="iOS">26</On>
+        <On Platform="UWP">24</On>
+
+    </OnPlatform>
+    <OnPlatform x:Key="PageHeaderLabelFontSize"
+                x:TypeArguments="x:Double">
+        <On Platform="Android">16</On>
+        <On Platform="iOS">18</On>
+        <On Platform="UWP">16</On>
+
+    </OnPlatform>
+
+</ResourceDictionary>

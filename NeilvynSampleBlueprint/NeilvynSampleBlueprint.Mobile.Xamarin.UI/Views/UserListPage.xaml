@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:UserListPageXaml xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:NeilvynSampleBlueprint.Mobile.Xamarin.Common.ViewModels;assembly=NeilvynSampleBlueprint.Mobile.Xamarin.Common"
+             xmlns:itemModels="clr-namespace:NeilvynSampleBlueprint.Mobile.Xamarin.Common.Models;assembly=NeilvynSampleBlueprint.Mobile.Xamarin.Common"
+             xmlns:views="clr-namespace:NeilvynSampleBlueprint.Mobile.Xamarin.UI.Views;assembly=NeilvynSampleBlueprint.Mobile.Xamarin.UI"
+             xmlns:customControls="clr-namespace:NeilvynSampleBlueprint.Mobile.Xamarin.UI.CustomControls;assembly=NeilvynSampleBlueprint.Mobile.Xamarin.UI"
+             x:Class="NeilvynSampleBlueprint.Mobile.Xamarin.UI.Views.UserListPage"
+             x:DataType="viewModels:UserListViewModel"
+             Title="User List">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Offline Data"
+                   IsVisible="{Binding IsOfflineData}"
+                   Background="{StaticResource ErrorColor}" 
+                   TextColor="{StaticResource WhiteColor}"
+                   HorizontalOptions="FillAndExpand"
+                   HorizontalTextAlignment="Center"/>
+            <CollectionView ItemsSource="{Binding UserList}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="itemModels:UserItemModel">
+                        <StackLayout Orientation="Horizontal" Padding="10">
+                            <Frame WidthRequest="40" 
+                                   HeightRequest="40"
+                                   CornerRadius="20"
+                                   BackgroundColor="{Binding AvatarColorHex}"
+                                   Padding="0"
+                                   VerticalOptions="Center">
+                                <Image Aspect="Fill" Margin="2" 
+                                       Source="{Binding AvatarUrl}"/>
+
+                            </Frame>
+
+                            <StackLayout HorizontalOptions="FillAndExpand" 
+                                         VerticalOptions="Center"
+                                         Padding="10">
+                                <Label Text="{Binding Name}" Style="{StaticResource LargeLabelStyle}"/>
+                                <Label Text="{Binding Age, StringFormat='Age: {0}'}"/>
+                                <Label Text="{Binding StatusMessage, StringFormat='Status: {0}'}"/>
+                            </StackLayout>
+                        </StackLayout>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <ContentView Padding="10">
+                <customControls:ActionButton Text="Close" Command="{Binding BackCommand}"/>
+            </ContentView>
+        </StackLayout>
+
+    </ContentPage.Content>
+</views:UserListPageXaml>
